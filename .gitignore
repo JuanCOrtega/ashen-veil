@@ -1,0 +1,24 @@
+# Sistema operativo
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editores
+.vs/
+*.swp
+*.tmp
+
+# Claude Code (ajustes locales)
+.claude/settings.local.json
+
+# Builds y exportaciones de Godot
+builds/
+ashen-veil/export/
+*.apk
+*.aab
+*.pck
+*.exe
+
+# ComfyUI: salidas sin aprobar (solo se versionan las aprobadas en style_refs/)
+pipeline/output/
+pipeline/temp/

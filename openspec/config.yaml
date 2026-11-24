@@ -1,0 +1,47 @@
+schema: spec-driven
+
+# Project context
+context: |
+  ASHEN VEIL: RPG táctico por turnos en 2D-HD con construcción de mazo y artilugios.
+  Un solo héroe controlable; los compañeros entran al combate como cartas.
+  Campaña clásica con guardado (no roguelite), ~30 h, Prólogo + 4 actos.
+
+  Stack:
+  - Godot 4 con GDScript TIPADO (sin C#). Proyecto Godot en `ashen-veil/` (res://).
+  - Renderizador Forward+ en PC; renderizador Mobile en Android (override `.mobile`).
+    Todo efecto visual debe tener alternativa para Mobile (sin niebla volumétrica ni SSAO).
+  - Objetivo principal: PC/Steam. Objetivo secundario: Android (interfaz táctil desde el inicio).
+  - Arte generado con ComfyUI y limpiado a mano; ver jugabilidad/09-pipeline-assets-comfyui.md.
+
+  Fuentes de verdad (enlazar, NO copiar su contenido en las specs):
+  - Diseño de jugabilidad: jugabilidad/ (combate 02, héroe 03, cartas 04, artilugios 05,
+    enemigos 06, exploración 07, arquitectura Godot 08).
+  - Narrativa y lore: consolidacion/ (no es objeto de specs).
+
+  Principios de arquitectura (jugabilidad/08-arquitectura-godot.md):
+  - Datos en Resources (.tres); lógica en sistemas genéricos. Añadir contenido
+    (cartas, artilugios, enemigos) debe ser añadir datos, no código.
+  - Cartas = lista de CardEffect componibles. Pasivas (artilugios, talentos, linajes)
+    = PassiveData suscritas a señales del EventBus.
+  - Todo cambio de estado del combate pasa por una ActionQueue con `await`.
+  - Guardado en JSON con ids (nunca Resources serializados).
+
+  Convenciones:
+  - Identificadores de código en inglés (clases, métodos, variables, señales, archivos .gd).
+  - Contenido visible y datos en español (nombres de cartas, textos, lore).
+  - Clases con `class_name`; tipado estático obligatorio (warnings de untyped activos).
+  - Pruebas con GUT o gdUnit4 para la lógica de combate y efectos.
+
+  Idioma: escribir todos los artefactos de OpenSpec en español.
+
+rules:
+  proposal:
+    - Indicar explícitamente qué queda fuera de alcance.
+    - Enlazar la sección de jugabilidad/ de la que sale el cambio.
+  design:
+    - Justificar cualquier excepción a "datos en Resources, lógica genérica".
+    - Considerar el impacto en el renderizador Mobile y en la interfaz táctil cuando haya UI o efectos visuales.
+  tasks:
+    - Tareas de 2 horas como máximo.
+    - Cada sistema de combate debe incluir una tarea de pruebas automatizadas.
+    - Incluir una tarea para comprobar el cambio en la escena de pruebas de combate cuando aplique.
