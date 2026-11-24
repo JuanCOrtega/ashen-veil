@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_88fq5"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="2_bni7e"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_d1mhm"]
+
+[sub_resource type="Resource" id="Resource_gmotj"]
+script = ExtResource("2_bni7e")
+base = 3
+
+[resource]
+script = ExtResource("3_d1mhm")
+id = &"cuchillo_de_cocina"
+display_name = "Cuchillo de cocina"
+cost = 0
+balanza = 1
+effects = Array[ExtResource("1_88fq5")]([SubResource("Resource_gmotj")])
+rules_text = "3 de daño físico."
+lore_text = "Lo humilde consagra más hondo."

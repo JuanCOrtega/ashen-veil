@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_y6pyv"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="2_5eg01"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_v2ars"]
+
+[sub_resource type="Resource" id="Resource_r7e5m"]
+script = ExtResource("2_5eg01")
+base = 5
+damage_type = 1
+scaling_stat = 1
+
+[resource]
+script = ExtResource("3_v2ars")
+id = &"destello"
+display_name = "Destello"
+balanza = 1
+effects = Array[ExtResource("1_y6pyv")]([SubResource("Resource_r7e5m")])
+rules_text = "5 de daño etéreo."

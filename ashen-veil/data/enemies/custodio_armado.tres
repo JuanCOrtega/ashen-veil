@@ -1,0 +1,49 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/intent_data.gd" id="1_nkjku"]
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="2_jcwj7"]
+[ext_resource type="Script" path="res://scripts/effects/guard_effect.gd" id="3_7b3ge"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="4_vymrq"]
+[ext_resource type="Script" path="res://scripts/effects/velo_effect.gd" id="5_rrlpx"]
+[ext_resource type="Script" path="res://scripts/resources/enemy_data.gd" id="6_3mub3"]
+
+[sub_resource type="Resource" id="Resource_17kn6"]
+script = ExtResource("3_7b3ge")
+base = 8
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_qp7lk"]
+script = ExtResource("1_nkjku")
+icon = 2
+effects = Array[ExtResource("2_jcwj7")]([SubResource("Resource_17kn6")])
+
+[sub_resource type="Resource" id="Resource_plwg7"]
+script = ExtResource("4_vymrq")
+base = 8
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_xkvqi"]
+script = ExtResource("1_nkjku")
+effects = Array[ExtResource("2_jcwj7")]([SubResource("Resource_plwg7")])
+
+[sub_resource type="Resource" id="Resource_12cwi"]
+script = ExtResource("5_rrlpx")
+base = 6
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_ao4ka"]
+script = ExtResource("4_vymrq")
+base = 4
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_rmrpo"]
+script = ExtResource("1_nkjku")
+icon = 3
+effects = Array[ExtResource("2_jcwj7")]([SubResource("Resource_12cwi"), SubResource("Resource_ao4ka")])
+
+[resource]
+script = ExtResource("6_3mub3")
+id = &"custodio_armado"
+display_name = "Custodio armado"
+max_vitality = 30
+intent_pattern = Array[ExtResource("1_nkjku")]([SubResource("Resource_qp7lk"), SubResource("Resource_xkvqi"), SubResource("Resource_rmrpo")])

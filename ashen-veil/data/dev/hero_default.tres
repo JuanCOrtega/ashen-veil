@@ -1,0 +1,162 @@
+[gd_resource type="Resource" script_class="HeroCombatConfig" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="1_d4a6g"]
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="2_y8mjs"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="3_s1lmo"]
+[ext_resource type="Script" path="res://scripts/effects/guard_effect.gd" id="4_auinv"]
+[ext_resource type="Script" path="res://scripts/effects/velo_effect.gd" id="5_rhasa"]
+[ext_resource type="Script" path="res://scripts/effects/balanza_effect.gd" id="6_g48i2"]
+[ext_resource type="Script" path="res://scripts/effects/draw_effect.gd" id="7_ht0bm"]
+[ext_resource type="Script" path="res://scripts/resources/hero_combat_config.gd" id="8_3p7mq"]
+
+[sub_resource type="Resource" id="Resource_47cc5"]
+script = ExtResource("3_s1lmo")
+
+[sub_resource type="Resource" id="Resource_gmhgn"]
+script = ExtResource("1_d4a6g")
+id = &"barra_consagrada"
+display_name = "Barra consagrada"
+balanza = 1
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_47cc5")])
+rules_text = "6 de daño físico."
+lore_text = "Cualquier hierro sirve, si quien lo empuña no duda."
+
+[sub_resource type="Resource" id="Resource_gmotj"]
+script = ExtResource("3_s1lmo")
+base = 3
+
+[sub_resource type="Resource" id="Resource_4hu2j"]
+script = ExtResource("1_d4a6g")
+id = &"cuchillo_de_cocina"
+display_name = "Cuchillo de cocina"
+cost = 0
+balanza = 1
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_gmotj")])
+rules_text = "3 de daño físico."
+lore_text = "Lo humilde consagra más hondo."
+
+[sub_resource type="Resource" id="Resource_bc8c0"]
+script = ExtResource("3_s1lmo")
+base = 4
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_e245l"]
+script = ExtResource("1_d4a6g")
+id = &"piedra_del_camino"
+display_name = "Piedra del camino"
+cost = 0
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_bc8c0")])
+rules_text = "4 de daño físico."
+
+[sub_resource type="Resource" id="Resource_pasxj"]
+script = ExtResource("4_auinv")
+
+[sub_resource type="Resource" id="Resource_r36d6"]
+script = ExtResource("1_d4a6g")
+id = &"cubrirse"
+display_name = "Cubrirse"
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_pasxj")])
+rules_text = "6 de Guardia."
+
+[sub_resource type="Resource" id="Resource_mcis4"]
+script = ExtResource("5_rhasa")
+
+[sub_resource type="Resource" id="Resource_ik1e1"]
+script = ExtResource("1_d4a6g")
+id = &"persignarse"
+display_name = "Persignarse"
+balanza = 1
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_mcis4")])
+rules_text = "5 de Velo."
+
+[sub_resource type="Resource" id="Resource_aoyao"]
+script = ExtResource("6_g48i2")
+
+[sub_resource type="Resource" id="Resource_76sko"]
+script = ExtResource("7_ht0bm")
+
+[sub_resource type="Resource" id="Resource_71xk5"]
+script = ExtResource("1_d4a6g")
+id = &"respirar"
+display_name = "Respirar"
+cost = 0
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_aoyao"), SubResource("Resource_76sko")])
+rules_text = "Equilibrio 2. Roba 1 carta."
+
+[sub_resource type="Resource" id="Resource_e1ww8"]
+script = ExtResource("3_s1lmo")
+damage_type = 1
+scaling_stat = 2
+
+[sub_resource type="Resource" id="Resource_l2gqj"]
+script = ExtResource("1_d4a6g")
+id = &"toque_frio"
+display_name = "Toque frío"
+balanza = -1
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_e1ww8")])
+rules_text = "6 de daño etéreo."
+
+[sub_resource type="Resource" id="Resource_r7e5m"]
+script = ExtResource("3_s1lmo")
+base = 5
+damage_type = 1
+scaling_stat = 1
+
+[sub_resource type="Resource" id="Resource_e3ll4"]
+script = ExtResource("1_d4a6g")
+id = &"destello"
+display_name = "Destello"
+balanza = 1
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_r7e5m")])
+rules_text = "5 de daño etéreo."
+
+[sub_resource type="Resource" id="Resource_nb6tg"]
+script = ExtResource("4_auinv")
+base = 8
+
+[sub_resource type="Resource" id="Resource_oipms"]
+script = ExtResource("5_rhasa")
+base = 8
+
+[sub_resource type="Resource" id="Resource_ln2jo"]
+script = ExtResource("6_g48i2")
+
+[sub_resource type="Resource" id="Resource_fpob6"]
+script = ExtResource("1_d4a6g")
+id = &"hilo_de_la_malla"
+display_name = "Hilo de la Malla"
+cost = 2
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_nb6tg"), SubResource("Resource_oipms"), SubResource("Resource_ln2jo")])
+rules_text = "8 de Guardia y 8 de Velo. Equilibrio 2."
+
+[sub_resource type="Resource" id="Resource_ds1tu"]
+script = ExtResource("3_s1lmo")
+base = 5
+damage_type = 1
+scaling_stat = 3
+
+[sub_resource type="Resource" id="Resource_rvsto"]
+script = ExtResource("1_d4a6g")
+id = &"salmo"
+display_name = "Salmo"
+card_type = 2
+target_type = 1
+effects = Array[ExtResource("2_y8mjs")]([SubResource("Resource_ds1tu")])
+rules_text = "5 de daño etéreo a todos los enemigos."
+
+[resource]
+script = ExtResource("8_3p7mq")
+strength = 8
+fulgor = 6
+umbral = 2
+voice = 3
+will = 4
+deck = Array[ExtResource("1_d4a6g")]([SubResource("Resource_gmhgn"), SubResource("Resource_gmhgn"), SubResource("Resource_gmhgn"), SubResource("Resource_gmhgn"), SubResource("Resource_4hu2j"), SubResource("Resource_4hu2j"), SubResource("Resource_e245l"), SubResource("Resource_r36d6"), SubResource("Resource_r36d6"), SubResource("Resource_r36d6"), SubResource("Resource_ik1e1"), SubResource("Resource_ik1e1"), SubResource("Resource_71xk5"), SubResource("Resource_71xk5"), SubResource("Resource_l2gqj"), SubResource("Resource_l2gqj"), SubResource("Resource_e3ll4"), SubResource("Resource_e3ll4"), SubResource("Resource_fpob6"), SubResource("Resource_rvsto")])

@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/intent_data.gd" id="1_i456f"]
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="2_qpscf"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="3_w6o8c"]
+[ext_resource type="Script" path="res://scripts/resources/enemy_data.gd" id="4_ugfx7"]
+
+[sub_resource type="Resource" id="Resource_istkg"]
+script = ExtResource("3_w6o8c")
+base = 5
+damage_type = 1
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_qw635"]
+script = ExtResource("1_i456f")
+icon = 1
+effects = Array[ExtResource("2_qpscf")]([SubResource("Resource_istkg")])
+
+[sub_resource type="Resource" id="Resource_ouin4"]
+script = ExtResource("3_w6o8c")
+base = 7
+damage_type = 1
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_p1ym2"]
+script = ExtResource("1_i456f")
+icon = 1
+effects = Array[ExtResource("2_qpscf")]([SubResource("Resource_ouin4")])
+
+[resource]
+script = ExtResource("4_ugfx7")
+id = &"sombra_libre"
+display_name = "Sombra libre"
+max_vitality = 16
+intent_pattern = Array[ExtResource("1_i456f")]([SubResource("Resource_qw635"), SubResource("Resource_p1ym2")])

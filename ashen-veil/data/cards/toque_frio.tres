@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_aofsv"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="2_bxdt5"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_2migm"]
+
+[sub_resource type="Resource" id="Resource_e1ww8"]
+script = ExtResource("2_bxdt5")
+damage_type = 1
+scaling_stat = 2
+
+[resource]
+script = ExtResource("3_2migm")
+id = &"toque_frio"
+display_name = "Toque frío"
+balanza = -1
+effects = Array[ExtResource("1_aofsv")]([SubResource("Resource_e1ww8")])
+rules_text = "6 de daño etéreo."

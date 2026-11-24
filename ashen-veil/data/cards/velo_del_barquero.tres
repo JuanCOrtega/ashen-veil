@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_1rvgq"]
+[ext_resource type="Script" path="res://scripts/effects/velo_effect.gd" id="2_8xfeo"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_qw1ke"]
+
+[sub_resource type="Resource" id="Resource_otnyu"]
+script = ExtResource("2_8xfeo")
+base = 7
+
+[resource]
+script = ExtResource("3_qw1ke")
+id = &"velo_del_barquero"
+display_name = "Velo del barquero"
+balanza = -1
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("1_1rvgq")]([SubResource("Resource_otnyu")])
+rules_text = "7 de Velo."

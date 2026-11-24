@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_c6ifo"]
+[ext_resource type="Script" path="res://scripts/effects/guard_effect.gd" id="2_lntfn"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_5suwj"]
+
+[sub_resource type="Resource" id="Resource_pasxj"]
+script = ExtResource("2_lntfn")
+
+[resource]
+script = ExtResource("3_5suwj")
+id = &"cubrirse"
+display_name = "Cubrirse"
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("1_c6ifo")]([SubResource("Resource_pasxj")])
+rules_text = "6 de Guardia."

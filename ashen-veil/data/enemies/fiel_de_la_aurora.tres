@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="EnemyData" format=3]
+
+[ext_resource type="Script" path="res://scripts/resources/intent_data.gd" id="1_erh4y"]
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="2_8smyl"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="3_xsc1d"]
+[ext_resource type="Script" path="res://scripts/effects/guard_effect.gd" id="4_1phhv"]
+[ext_resource type="Script" path="res://scripts/resources/enemy_data.gd" id="5_vjt08"]
+
+[sub_resource type="Resource" id="Resource_0apo2"]
+script = ExtResource("3_xsc1d")
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_l54ys"]
+script = ExtResource("1_erh4y")
+effects = Array[ExtResource("2_8smyl")]([SubResource("Resource_0apo2")])
+
+[sub_resource type="Resource" id="Resource_mj7u1"]
+script = ExtResource("3_xsc1d")
+base = 4
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_dgjv8"]
+script = ExtResource("4_1phhv")
+base = 4
+scaling_stat = 5
+
+[sub_resource type="Resource" id="Resource_v1o5q"]
+script = ExtResource("1_erh4y")
+icon = 3
+effects = Array[ExtResource("2_8smyl")]([SubResource("Resource_mj7u1"), SubResource("Resource_dgjv8")])
+
+[resource]
+script = ExtResource("5_vjt08")
+id = &"fiel_de_la_aurora"
+display_name = "Fiel de la Aurora"
+max_vitality = 22
+intent_pattern = Array[ExtResource("1_erh4y")]([SubResource("Resource_l54ys"), SubResource("Resource_v1o5q")])

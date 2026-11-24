@@ -4,6 +4,8 @@ Propuesta de cómo organizar el proyecto para que **los sistemas de cartas, arti
 
 **Principio:** **los datos van en Resources y la lógica en sistemas genéricos.** Añadir una carta debe ser crear un archivo de datos, no escribir un script.
 
+> **Estado:** el núcleo del combate ya está implementado (cambio OpenSpec `combate-nucleo`). La sección **§12** describe el código real y en qué se diferencia de esta propuesta. Los ejemplos de las secciones 3 a 5 son orientativos.
+
 ---
 
 ## 1. Estructura de carpetas
@@ -197,3 +199,33 @@ Así el balance se hace mirando una tabla, no abriendo 250 archivos.
 6. Diálogos con flags y cartas de historia.
 7. Guardado.
 8. *Vertical slice* del Prólogo completa.
+
+## 12. Implementación actual (cambio `combate-nucleo`)
+
+Código en `ashen-veil/` (Godot 4.7, GDScript con tipado estricto). Diferencias con la propuesta y datos útiles:
+
+| Tema | Propuesta | Implementado |
+|---|---|---|
+| Autoload de contenido | `Database` | Autoload **`Database`**, cuyo script tiene `class_name ContentDatabase` (para poder tipar `ContentDatabase.IndexResult`) |
+| Copia de una carta en combate | — | **`CardInstance`** (`scripts/combat/card_instance.gd`): envuelve un `CardData` con un `uid` único |
+| Estado y reglas | `CombatManager` | Separados: **`CombatState`** (datos puros), **`CombatManager`** (máquina de estados) y **`ActionQueue`** (resolución con `await` y presentador opcional) |
+| Constantes | — | **`CombatRules`** (límite de mano 10, Balanza ±10, 1–6 enemigos, fórmula de escala) y **`CombatEnums`** |
+| Acciones | Una por cambio | `DamageAction`, `GainGuardAction`, `GainVeloAction`, `DrawAction`, `ShiftBalanzaAction`, `MoveCardAction`, `PlayCardAction`, `SetIntentAction`, más **`FervorAction`** (recargar o gastar) y **`RoundAction`** (retirar Guardia o desgastar Velo) |
+| Intenciones enemigas | — | `IntentData` reutiliza los mismos `CardEffect` que las cartas |
+| Generar contenido | Importador CSV (futuro) | `tools/build_starter_content.gd` (lanzador) + `tools/starter_content_builder.gd` genera los `.tres` de `data/`. Por ahora el contenido se define en ese script |
+| Pruebas | GUT o gdUnit4 | **GUT 9.6.1** en `addons/gut`, con configuración en `.gutconfig.json` |
+| Escena de pruebas | `scenes/combat/` | `scenes/dev/combat_sandbox.tscn`, configurada como **escena principal** (F5) |
+
+### Comandos (desde `ashen-veil/`)
+
+```bash
+# Ejecutar todas las pruebas
+<godot> --headless --path . -s addons/gut/gut_cmdln.gd
+
+# Regenerar el contenido inicial de data/
+<godot> --headless --path . -s res://tools/build_starter_content.gd
+```
+
+`<godot>` es la ruta al ejecutable de consola de Godot (`Godot_v4.x_console.exe` en Windows).
+
+**Nota:** los scripts lanzados con `-s` se compilan antes de que existan los autoloads. Por eso las herramientas usan un lanzador mínimo que carga el código real en `_initialize()`.

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_exe5o"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="2_wvu52"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_gqnmq"]
+
+[sub_resource type="Resource" id="Resource_bc8c0"]
+script = ExtResource("2_wvu52")
+base = 4
+scaling_stat = 5
+
+[resource]
+script = ExtResource("3_gqnmq")
+id = &"piedra_del_camino"
+display_name = "Piedra del camino"
+cost = 0
+effects = Array[ExtResource("1_exe5o")]([SubResource("Resource_bc8c0")])
+rules_text = "4 de daño físico."

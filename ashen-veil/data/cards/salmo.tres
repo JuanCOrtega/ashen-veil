@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_0iqpn"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="2_iqdpg"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_t1tts"]
+
+[sub_resource type="Resource" id="Resource_ds1tu"]
+script = ExtResource("2_iqdpg")
+base = 5
+damage_type = 1
+scaling_stat = 3
+
+[resource]
+script = ExtResource("3_t1tts")
+id = &"salmo"
+display_name = "Salmo"
+card_type = 2
+target_type = 1
+effects = Array[ExtResource("1_0iqpn")]([SubResource("Resource_ds1tu")])
+rules_text = "5 de daño etéreo a todos los enemigos."

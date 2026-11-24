@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="ASHEN-VEIL"
+run/main_scene="res://scenes/dev/combat_sandbox.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+EventBus="*res://autoload/event_bus.gd"
+Database="*res://autoload/database.gd"
 
 [debug]
 
@@ -26,6 +32,10 @@ window/stretch/aspect="expand"
 [dotnet]
 
 project/assembly_name="ASHEN-VEIL"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [physics]
 

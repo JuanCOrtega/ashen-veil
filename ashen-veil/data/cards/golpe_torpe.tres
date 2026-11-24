@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_njws0"]
+[ext_resource type="Script" path="res://scripts/effects/damage_effect.gd" id="2_81c02"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="3_m301t"]
+
+[sub_resource type="Resource" id="Resource_jaa0u"]
+script = ExtResource("2_81c02")
+
+[resource]
+script = ExtResource("3_m301t")
+id = &"golpe_torpe"
+display_name = "Golpe torpe"
+effects = Array[ExtResource("1_njws0")]([SubResource("Resource_jaa0u")])
+rules_text = "6 de daño físico."

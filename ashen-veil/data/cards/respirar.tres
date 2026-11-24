@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CardData" format=3]
+
+[ext_resource type="Script" path="res://scripts/effects/card_effect.gd" id="1_e1ll7"]
+[ext_resource type="Script" path="res://scripts/effects/balanza_effect.gd" id="2_wrqp1"]
+[ext_resource type="Script" path="res://scripts/effects/draw_effect.gd" id="3_d6ern"]
+[ext_resource type="Script" path="res://scripts/resources/card_data.gd" id="4_v0c6n"]
+
+[sub_resource type="Resource" id="Resource_aoyao"]
+script = ExtResource("2_wrqp1")
+
+[sub_resource type="Resource" id="Resource_76sko"]
+script = ExtResource("3_d6ern")
+
+[resource]
+script = ExtResource("4_v0c6n")
+id = &"respirar"
+display_name = "Respirar"
+cost = 0
+card_type = 1
+target_type = 2
+effects = Array[ExtResource("1_e1ll7")]([SubResource("Resource_aoyao"), SubResource("Resource_76sko")])
+rules_text = "Equilibrio 2. Roba 1 carta."
