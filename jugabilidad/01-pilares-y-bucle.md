@@ -67,7 +67,7 @@ El héroe crece en cuatro ejes a la vez. Ninguno basta por sí solo:
 
 ## Dificultad
 
-- **Peregrino:** narrativa. Más Vitalidad, intenciones enemigas siempre visibles y la Balanza perdona más.
+- **Peregrino:** narrativa. Más Vitalidad, intenciones enemigas siempre visibles y la Balanza perdona más. **Las pistas del tutorial están siempre activas y se puede reintentar al instante cualquier combate**, no solo los de lección (ver [10-progresion-aprendizaje.md](10-progresion-aprendizaje.md)).
 - **Custodio:** la experiencia prevista.
 - **Mártir:** los enemigos tienen más Huecos, el Silencio borra cartas desde un exceso menor y las curaciones fuera de combate están limitadas.
 - Se puede cambiar en cualquier momento salvo en Mártir, que se fija al empezar.

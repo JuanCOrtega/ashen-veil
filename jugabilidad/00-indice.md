@@ -30,6 +30,7 @@ La narrativa y el lore están en [../consolidacion/](../consolidacion/). Aquí s
 | [07-exploracion-y-mundo.md](07-exploracion-y-mundo.md) | Mundo, zonas por acto, Mirada, Ecos, santuarios, diálogos y decisiones |
 | [08-arquitectura-godot.md](08-arquitectura-godot.md) | **Técnico:** estructura del proyecto, Resources, efectos componibles, combate, pasivas por eventos, importación CSV, 2D-HD y guardado |
 | [09-pipeline-assets-comfyui.md](09-pipeline-assets-comfyui.md) | **Producción:** qué generar con ComfyUI, consistencia, sprites vía 3D, props, organización de archivos y aspectos legales |
+| [10-progresion-aprendizaje.md](10-progresion-aprendizaje.md) | **Tutorial integrado:** el orden en que se enseñan 30 mecánicas, el Prólogo como tutorial escena a escena, reglas para combates de lección, requisitos técnicos y hoja de ruta de cambios de código |
 
 ## Alcance
 
@@ -49,7 +50,7 @@ La narrativa y el lore están en [../consolidacion/](../consolidacion/). Aquí s
 
 ## Pendiente de decidir
 
-- [ ] **Orígenes:** ¿se mantienen (2 o 3, con un diálogo y una carta inicial cada uno) o se eliminan?
+- [ ] **Orígenes:** ¿se mantienen (2 o 3, con un diálogo y una carta inicial cada uno) o se eliminan? Decidido en cualquier caso: el **combate de apertura es compartido** y cada Origen solo cambia la ambientación, el texto y el enemigo.
 - [ ] **Las Vías que no entran en el lanzamiento** (Penitente, Asceta y Artífice): ¿expansión o actualización gratuita?
 - [x] **GDScript con tipado estático.** Se descartó C# porque su exportación a Android e iOS es experimental y no permite exportar a web.
 - [ ] **Interfaz táctil desde el principio:** cartas grandes, arrastrar para jugar y menús que se puedan usar con el pulgar.
